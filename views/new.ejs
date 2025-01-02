@@ -1,0 +1,47 @@
+<%- include("partials/header.ejs") %>
+<main>
+  <h1>New Blog's Post</h1>
+  <section>
+    <form action="/submit" method="post">
+      <div>
+        <label for="title">Title:</label>
+        <input
+          class="item"
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Enter the title"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="content">Content:</label>
+        <textarea
+          class="item"
+          name="content"
+          id="content"
+          rows="8"
+          cols="33"
+          placeholder="Enter the text here..."
+          required
+        ></textarea>
+      </div>
+
+      <div class="item">
+        <label for="author">Author:</label>
+        <input
+          class="item"
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Enter the author of the post"
+          required
+        />
+      </div>
+
+      <input type="submit" value="Post it!" />
+    </form>
+  </section>
+</main>
+<%- include("partials/footer.ejs") %>

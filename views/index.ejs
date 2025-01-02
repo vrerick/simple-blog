@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+
+<main>
+  <h1>Blog Posts</h1>
+
+  <% if(locals.data.length === 0){ %>
+  <strong>No post to show!</strong>
+
+  <% } else { %>
+
+   <% for(let i=0; i<data.length; i++){ %>
+  <section class="blogPost">
+    <h1><%= data[i].title %></h1>
+    <p><%= data[i].content%></p>
+    <p><%= data[i].author%></p>
+    <p><%= data[i].createdAt%></p>
+
+    <div class="buttonContainer">
+    <form action="/edit" method="post">
+      <input type="hidden" name="editIndex" value="<%= i %>">
+      <button class="btn-edit" type="submit">Edit</button>
+    </form>
+
+    <form action="/delete" method="post">
+      <input type="hidden" name="deleteIndex" value="<%= i %>">
+      <button class="btn-delete" type="submit">Delete</button>
+    </form>
+</div>
+    <div class="divider"></div>
+  </section>
+  <% } %>
+<% } %>
+</main>
+
+<%- include("partials/footer.ejs") %>

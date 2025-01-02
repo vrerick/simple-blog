@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") %>
+
+<main>
+  <h1>Edit Post</h1>
+  <section>
+    <form action="/change" method="post">
+      <div>
+        <label for="title">Title:</label>
+        <input
+          class="item"
+          type="text"
+          name="title"
+          id="title"
+          value="<%= data[index].title%>"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="content">Content:</label>
+        <textarea
+          class="item"
+          name="content"
+          id="content"
+          rows="8"
+          cols="33"
+          required
+        >
+<%= data[index].content%></textarea
+        >
+      </div>
+
+      <div class="item">
+        <label for="author">Author:</label>
+        <input
+          class="item"
+          type="text"
+          name="author"
+          id="author"
+          value="<%= data[index].author%>"
+          required
+        />
+      </div>
+
+      <input type="hidden" name="editIndex" value="<%=index%>" />
+
+      <input type="submit" value="Post it!" />
+    </form>
+  </section>
+</main>
+
+<%- include("partials/footer.ejs") %>
