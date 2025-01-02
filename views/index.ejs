@@ -12,8 +12,8 @@
   <section class="blogPost">
     <h1><%= data[i].title %></h1>
     <p><%= data[i].content%></p>
-    <p><%= data[i].author%></p>
-    <p><%= data[i].createdAt%></p>
+    <i><%= data[i].author%></i>
+    <p><small><%= data[i].createdAt%></small></p>
 
     <div class="buttonContainer">
     <form action="/edit" method="post">
